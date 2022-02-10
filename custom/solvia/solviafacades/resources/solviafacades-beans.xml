@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
+
+	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
+		<property name="genders" type="java.util.List&lt;com.solvia.facades.product.data.GenderData>"/>
+		<property name="slvProductCustomField" type="String"/>
+		<property name="slvProductCustomFieldInteger" type="Integer"/>
+	</bean>
+
+	<bean class="com.solvia.facades.product.data.GenderData">
+		<property name="code" type="String"/>
+		<property name="name" type="String"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.user.data.CustomerData">
+		<property name="solviaCustomField" type="String"/>
+		<property name="solviaCustomFieldInteger" type="Integer"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.product.data.CategoryData">
+		<property name="slvCategoryCustomField" type="String"/>
+		<property name="slvCategoryCustomFieldInteger" type="Integer"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.solviaCustomers.data.SolviaCustomerData">
+		<property name="solviaCustomerCustomField" type="String"/>
+		<property name="solviaCustomerCustomFieldInteger" type="Integer"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.solviaProducts.data.SolviaProductData">
+		<property name="slvCustomProductField" type="String"/>
+		<property name="slvCustomProductFieldInteger" type="Integer"/>
+	</bean>
+
+	<bean class="de.hybris.platform.commercefacades.solviaCategories.data.SolviaCategoryData">
+		<property name="slvCustomCategoryField" type="String"/>
+		<property name="slvCustomCategoryFieldInteger" type="Integer"/>
+	</bean>
+
+
+</beans>

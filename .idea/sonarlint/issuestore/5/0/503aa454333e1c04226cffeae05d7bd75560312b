@@ -1,0 +1,10 @@
+
+\
+java:S10756"ARefactor your code to get this URI from a customizable parameter.(éÓŸòþÿÿÿÿ
+\
+java:S1612Š"EReplace this lambda with method reference 'KeywordModel::getKeyword'.(‰¹„¬
+<
+java:S2326ì" QUERY is not used in the method.(ó­¸Äøÿÿÿÿ
+d	java:S119ì"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(ó­¸Äøÿÿÿÿ
+^
+java:S5738®"GRemove this call to a deprecated class, it has been marked for removal.(”•…¬

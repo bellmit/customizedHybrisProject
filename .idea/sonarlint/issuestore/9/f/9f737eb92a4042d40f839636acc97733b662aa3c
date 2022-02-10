@@ -1,0 +1,64 @@
+
+V	java:S125"<This block of commented-out lines of code should be removed.(Ì¢•áÿÿÿÿÿ
+R	java:S125©"<This block of commented-out lines of code should be removed.(úœúé
+d
+java:S4488‰"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ï÷³£ÿÿÿÿÿ
+_
+java:S4488¥"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Æøîç
+_
+java:S4488¶"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ø¿±
+^
+java:S5738½"GRemove this call to a deprecated class, it has been marked for removal.(í»ÑÊ
+c
+java:S5738¾"GRemove this call to a deprecated class, it has been marked for removal.(™Ä¥·ûÿÿÿÿ
+d
+java:S4488È"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(´ıƒÕûÿÿÿÿ
+d
+java:S4488ç"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(¼Ñ’ïÿÿÿÿÿ
+_
+java:S4488ö"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(’Ûù
+d
+java:S4488›"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(©¨İÜşÿÿÿÿ
+f
+java:S4488­"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ƒÊáºşÿÿÿÿ
+d
+java:S4488è"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Œ«íÿÿÿÿÿ
+`
+java:S4488„"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(†¾«
+R	java:S125§"<This block of commented-out lines of code should be removed.(öíôÎ
+_
+java:S4488¹"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(†÷ã·
+`
+java:S4488Ê"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(˜¿©+
+_
+java:S4488÷"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(È×®ş
+d
+java:S4488„"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(°ÙØõøÿÿÿÿ
+f
+java:S4488§"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ÙÔ·Õûÿÿÿÿ
+^
+java:S4488è"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ÚŸ
+f
+java:S4488›"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¢‚²íüÿÿÿÿ
+a
+java:S4488Í"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(å’£µ
+_
+java:S4488÷"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(¿¹ØË
+d
+java:S4488…"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(‰§«ğùÿÿÿÿ
+f
+java:S4488’"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"( ‹»şıÿÿÿÿ
+`
+java:S4488Ÿ"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ÙĞÌ4
+R
+java:S1874¤";Remove this use of "unlinkCCPaymentInfo"; it is deprecated.(®‰ãŸ
+_
+java:S4488ª"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ûëêâ
+f
+java:S4488·"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(±Å¾€ùÿÿÿÿ
+f
+java:S4488Ò"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ÑÀ«Æùÿÿÿÿ
+_
+java:S4488ì"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ù†ïË
+f
+java:S4488ø"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Ş°ıïùÿÿÿÿ

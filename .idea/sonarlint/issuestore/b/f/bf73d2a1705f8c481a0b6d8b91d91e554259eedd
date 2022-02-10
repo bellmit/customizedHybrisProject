@@ -1,0 +1,83 @@
+
+^
+java:S4488;"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Æøîç
+p
+java:S3252?"ZUse static access with "de.hybris.platform.core.model.security.PrincipalModel" for "NAME".(ïéˆÊ
+]
+java:S5738C"GRemove this call to a deprecated class, it has been marked for removal.(”•…¬
+b
+java:S5738D"GRemove this call to a deprecated class, it has been marked for removal.(Äø³ûÿÿÿÿ
+c
+java:S4488S"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(³™ƒøÿÿÿÿÿ
+^
+java:S4488\"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(áÉÁÔ
+`
+java:S4488p"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Šµ†Í
+c
+java:S4488{"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ø°ÁÒøÿÿÿÿ
+f
+java:S4488„"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(µ›«…ûÿÿÿÿ
+_
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(şâÙç
+f
+java:S4488¢"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(•– ùÿÿÿÿ
+f
+java:S4488¶"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¿”ãóûÿÿÿÿ
+d
+java:S4488À"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ë ığÿÿÿÿÿ
+f
+java:S4488Ö"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(Š¾î¯ÿÿÿÿÿ
+_
+java:S4488ü"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(üˆ’Ş
+v
+java:S3252€"ZUse static access with "de.hybris.platform.core.model.security.PrincipalModel" for "NAME".(Î©å€úÿÿÿÿ
+^
+java:S5738"GRemove this call to a deprecated class, it has been marked for removal.(”•…¬
+^
+java:S5738"GRemove this call to a deprecated class, it has been marked for removal.(™¦Ö
+_
+java:S4488­"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ò»¼
+v
+java:S3252±"ZUse static access with "de.hybris.platform.core.model.security.PrincipalModel" for "NAME".(Î©å€úÿÿÿÿ
+^
+java:S5738À"GRemove this call to a deprecated class, it has been marked for removal.(”•…¬
+c
+java:S5738Á"GRemove this call to a deprecated class, it has been marked for removal.(Â¡ş•ùÿÿÿÿ
+d
+java:S4488ë"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ò²ùÿÿÿÿ
+_
+java:S4488…"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(“Ñµ­
+^
+java:S4488 "HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ùàíA
+v
+java:S3252¤"ZUse static access with "de.hybris.platform.core.model.security.PrincipalModel" for "NAME".(Î©å€úÿÿÿÿ
+^
+java:S5738³"GRemove this call to a deprecated class, it has been marked for removal.(”•…¬
+c
+java:S5738´"GRemove this call to a deprecated class, it has been marked for removal.(£¸Šøÿÿÿÿ
+_
+java:S4488Ñ"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(È”¯Ç
+d
+java:S4488ƒ"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(’ıØÜøÿÿÿÿ
+f
+java:S4488š"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(—‡´úşÿÿÿÿ
+\
+java:S1192W"GDefine a constant instead of duplicating this literal "action" 7 times.(Ğíú"
+b
+java:S1192û"FDefine a constant instead of duplicating this literal "users" 3 times.(ÒĞ™Íıÿÿÿÿ
+c
+java:S1192M"MDefine a constant instead of duplicating this literal "breadcrumbs" 13 times.(¼•×»
+Œ
+java:S1192K"qDefine a constant instead of duplicating this literal "/my-company/organization-management/manage-users" 4 times.( ¼äùÿÿÿÿ
+c
+java:S1192ú"GDefine a constant instead of duplicating this literal "%s, %s" 3 times.(½—åìüÿÿÿÿ
+b
+java:S1192ı"KDefine a constant instead of duplicating this literal "disableUrl" 3 times.(¦Ê¤Û
+a
+java:S1192W"LDefine a constant instead of duplicating this literal "manageUsers" 4 times.(Ğíú"
+a
+java:S1192”"JDefine a constant instead of duplicating this literal "cancelUrl" 8 times.(Ò¾‰Ÿ
+d
+java:S1192“"HDefine a constant instead of duplicating this literal "baseUrl" 3 times.(øêœƒùÿÿÿÿ
+f
+java:S1192ú"JDefine a constant instead of duplicating this literal "arguments" 3 times.(½—åìüÿÿÿÿ

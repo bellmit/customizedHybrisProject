@@ -1,0 +1,21 @@
+
+P
+java:S1874":Remove this use of "FieldValueProvider"; it is deprecated.(¥õ§Ó
+P
+java:S1874*":Remove this use of "getCurrentCurrency"; it is deprecated.(û˜Ëí
+O
+java:S1874/":Remove this use of "setCurrentCurrency"; it is deprecated.(Ä›ô"
+P
+java:S18749":Remove this use of "setCurrentCurrency"; it is deprecated.(ÞÃø‘
+s
+java:S3252O"XUse static access with "de.hybris.platform.europe1.jalo.GeneratedPriceRow" for "MINQTD".(íø†ñüÿÿÿÿ
+n
+java:S3252Q"XUse static access with "de.hybris.platform.europe1.jalo.GeneratedPriceRow" for "MINQTD".(È¥ÁÄ
+E
+java:S1874d"0Remove this use of "Required"; it is deprecated.(çüÙQ
+E
+java:S1874o"0Remove this use of "Required"; it is deprecated.(çüÙQ
+o
+java:S2293)"YReplace the type specification in this constructor call with the diamond operator ("<>").(±¢©­
+o
+java:S2293K"YReplace the type specification in this constructor call with the diamond operator ("<>").(þýüú

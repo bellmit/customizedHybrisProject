@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module descriptorType="CUSTOM" importedAsReadOnly="false" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot" relative="/" />
+        </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/src" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/scalasrc" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/gensrc" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/resources" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/src" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/scalasrc" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/gensrc" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/commonweb/src" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/commonweb/scalasrc" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/commonweb/gensrc" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/acceleratoraddon/web/src" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/acceleratoraddon/web/scalasrc" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/acceleratoraddon/web/gensrc" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/backoffice/src" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/backoffice/scalasrc" />
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/backoffice/resources" />
+        </sourceRoots>
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration process_explicitly_annotated="false">
+        <fileset id="solviacommercewebservicesspring" name="solviacommercewebservicesspring" removed="false">
+          <dependency>acceleratorwebservicesaddonspring==acceleratorwebservicesaddon</dependency>
+          <dependency>b2boccaddonspring==b2boccaddon</dependency>
+          <dependency>cmsoccaddonspring==cmsoccaddon</dependency>
+          <dependency>commercefacadesspring==commercefacades</dependency>
+          <dependency>commercewebservicescommonsspring==commercewebservicescommons</dependency>
+          <dependency>consignmenttrackingoccaddonspring==consignmenttrackingoccaddon</dependency>
+          <dependency>savedorderformsoccaddonspring==savedorderformsoccaddon</dependency>
+          <dependency>solviafacadesspring==solviafacades</dependency>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/project.properties</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/resources/solviacommercewebservices-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/solviacommercewebservices-web-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/v2-web-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/v2/dto-level-mappings-v2-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/v2/dto-mappings-v2-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/v2/jaxb-converters-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/v2/error-config-v2-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/v2/filter-config-v2-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/v2/security-v2-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/v2/validators-v2-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/common-web-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/common/xstream-converters-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/common/cache-config-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/common/error-config-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/common/filter-config-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/config/common/security-spring.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../custom/solviacommercewebservices/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../custom/solviacommercewebservices/eclipsebin" />
+    <exclude-output />
+    <javadoc-paths>
+      <root url="https://download.hybris.com/api/1905/commercesuite" />
+    </javadoc-paths>
+    <content url="file://$MODULE_DIR$/../custom/solviacommercewebservices">
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/acceleratoraddon/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/acceleratoraddon/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/acceleratoraddon/web/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/acceleratoraddon/web/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/acceleratoraddon/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/acceleratoraddon/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/backoffice/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/backoffice/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/backoffice/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/backoffice/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/backoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/backoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/commonweb/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/commonweb/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/commonweb/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/commonweb/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/commonweb/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/commonweb/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/testsrc" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/eclipsebin" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/bower_components" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/jsTarget" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/commonweb/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/commonweb/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/commonweb/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/acceleratoraddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/acceleratoraddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/acceleratoraddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solviacommercewebservices/backoffice/classes" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../custom/solviacommercewebservices/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../custom/solviacommercewebservices/web/webroot/WEB-INF/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="acceleratorwebservicesaddon" exported="" />
+    <orderEntry type="module" module-name="b2boccaddon" exported="" />
+    <orderEntry type="module" module-name="cmsoccaddon" exported="" />
+    <orderEntry type="module" module-name="commercefacades" exported="" />
+    <orderEntry type="module" module-name="commercewebservicescommons" exported="" />
+    <orderEntry type="module" module-name="consignmenttrackingoccaddon" exported="" />
+    <orderEntry type="module" module-name="savedorderformsoccaddon" exported="" />
+    <orderEntry type="module" module-name="solviafacades" exported="" />
+  </component>
+</module>

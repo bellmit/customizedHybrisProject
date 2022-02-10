@@ -1,0 +1,12 @@
+
+$productCatalog=powertoolsProductCatalog
+$productCatalogName=Powertools Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$baseProduct=baseProduct(code, catalogVersion(catalog(id[default='$productCatalog']),version[default='Staged']))
+$approved=approvalstatus(code)[default='approved']
+
+INSERT_UPDATE Product;code[unique=true];$catalogVersion;slvProductCustomField;slvProductCustomFieldInteger
+;3592865;;averageProductCondition;125
+;2116279;;badProductCondition;126
+;3755219;;averageProductCondition;124
+;3881018;;badProductCondition;123

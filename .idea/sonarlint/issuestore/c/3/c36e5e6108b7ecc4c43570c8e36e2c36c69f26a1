@@ -1,0 +1,79 @@
+
+i
+java:S1871½"MThis branch's code block is the same as the block for the branch on line 184.(ÒÌâ–øÿÿÿÿ
+¼
+java:S1130Æ"¤Remove the declaration of thrown exception 'de.hybris.platform.commerceservices.order.CommerceCartModificationException', as it cannot be thrown from method's body.(Úî
+_
+java:S4488Ñ"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Æøîç
+^
+java:S5738ã"GRemove this call to a deprecated class, it has been marked for removal.(°®ÅÈ
+^
+java:S5738ã"GRemove this call to a deprecated class, it has been marked for removal.(°®ÅÈ
+d
+java:S4488ò"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Øõäøüÿÿÿÿ
+i
+java:S3776‚"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(„²É
+f
+java:S4488ı"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ßƒµ¢şÿÿÿÿ
+e
+java:S4488ß"NReplace "@RequestMapping(method = RequestMethod.DELETE)" with "@DeleteMapping"(¶®©ô
+_
+java:S4488é"HReplace "@RequestMapping(method = RequestMethod.PUT)" with "@PutMapping"(«¿½Ù
+_
+java:S4488ÿ"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Å¤©ë
+f
+java:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ñÃà­ûÿÿÿÿ
+a
+java:S4488º"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(—Ã¹·
+d
+java:S4488Ğ"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(™Òµôùÿÿÿÿ
+d
+java:S4488à"HReplace "@RequestMapping(method = RequestMethod.PUT)" with "@PutMapping"(¥•À‚ûÿÿÿÿ
+_
+java:S4488¡"HReplace "@RequestMapping(method = RequestMethod.PUT)" with "@PutMapping"(Ğ÷Ô
+h
+java:S4488Å"LReplace "@RequestMapping(method = RequestMethod.PATCH)" with "@PatchMapping"(‹èëĞøÿÿÿÿ
+c
+java:S4488í"LReplace "@RequestMapping(method = RequestMethod.PATCH)" with "@PatchMapping"(‘Œÿ±
+e
+java:S4488"NReplace "@RequestMapping(method = RequestMethod.DELETE)" with "@DeleteMapping"(µ˜ò¥
+a
+java:S4488¢"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¦¶ŠÛ
+f
+java:S4488¶"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(–²³£øÿÿÿÿ
+_
+java:S4488Î"HReplace "@RequestMapping(method = RequestMethod.PUT)" with "@PutMapping"(­âõ·
+e
+java:S4488Ú"NReplace "@RequestMapping(method = RequestMethod.DELETE)" with "@DeleteMapping"(óÆş
+_
+java:S4488ë"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ËüÇß
+_
+java:S4488ú"HReplace "@RequestMapping(method = RequestMethod.PUT)" with "@PutMapping"(÷‡ÇÁ
+d
+java:S4488†"NReplace "@RequestMapping(method = RequestMethod.DELETE)" with "@DeleteMapping"(šõøU
+d
+java:S4488—"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ş¢ßŠıÿÿÿÿ
+a
+java:S4488«"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ª†¸•
+f
+java:S4488º"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ô¹ø¸ıÿÿÿÿ
+_
+java:S4488Ú"HReplace "@RequestMapping(method = RequestMethod.PUT)" with "@PutMapping"(¸ë®Œ
+d
+java:S4488æ"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Ş÷´Óıÿÿÿÿ
+d
+java:S4488€"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(¯¤×‚üÿÿÿÿ
+a
+java:S4488§"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(İƒè‹
+j
+java:S4488º"NReplace "@RequestMapping(method = RequestMethod.DELETE)" with "@DeleteMapping"(ÛØŒıüÿÿÿÿ
+_
+java:S4488Î"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ª²ˆ•
+f
+java:S4488ß"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¹Ë¡†üÿÿÿÿ
+j
+java:S4488ì"NReplace "@RequestMapping(method = RequestMethod.DELETE)" with "@DeleteMapping"(Ò¨³¡ùÿÿÿÿ
+b
+java:S1192Ê"FDefine a constant instead of duplicating this literal "entry" 5 times.(ÄØåûúÿÿÿÿ
+c
+java:S1192Ú"LDefine a constant instead of duplicating this literal "entryNumber" 4 times.(ó¦¤ü

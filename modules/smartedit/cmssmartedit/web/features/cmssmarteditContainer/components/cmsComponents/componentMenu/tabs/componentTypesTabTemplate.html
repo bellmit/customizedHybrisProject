@@ -1,0 +1,22 @@
+<div class="se-component-menu__types-header">
+    <component-search data-on-change="$ctrl.onSearchTermChanged(searchTerm)"
+        class="se-component-menu__type-search"
+        data-placeholder="se.cms.componentmenu.search.type.placeholder"></component-search>
+</div>
+
+<div class="se-component-menu__result-container">
+    <y-infinite-scrolling class="se-component-menu__infinite-scroll"
+        data-ng-if="$ctrl.isMenuOpen || $ctrl.isTabActive"
+        drop-down-class="ySEComponents"
+        data-page-size="10"
+        data-mask="$ctrl.searchTerm"
+        data-fetch-page="$ctrl.loadComponentTypes"
+        data-context="$ctrl">
+        <div class="se-component-menu__result se-component-menu__result--types">
+            <div class="se-component-menu__item-wrap"
+                data-ng-repeat="componentType in $ctrl.items">
+                <component-type data-type-info="componentType"></component-type>
+            </div>
+        </div>
+    </y-infinite-scrolling>
+</div>

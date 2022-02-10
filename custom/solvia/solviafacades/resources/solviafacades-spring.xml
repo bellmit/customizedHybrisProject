@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+		
+	<context:annotation-config/> 
+
+	<alias alias="simpleSuggestionFacade" name="defaultSimpleSuggestionFacade"/>
+	<bean id="defaultSimpleSuggestionFacade" class="com.solvia.facades.suggestion.impl.DefaultSimpleSuggestionFacade" >
+		<property name="simpleSuggestionService" ref="simpleSuggestionService"/>
+		<property name="userService" ref="userService"/>
+		<property name="categoryService" ref="categoryService"/>
+		<property name="productService" ref="productService"/>
+		<property name="productConverter" ref="carouselProductConverter"/>
+		<property name="cartService" ref="cartService"/>
+	</bean>
+	
+	<bean id="carouselProductConverter" parent="defaultProductConverter">
+		<property name="populators">
+			<list merge="true">
+				<ref bean="productPricePopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="acceleratorVariantOptionDataConverter" alias="variantOptionDataConverter"/> 
+	<bean id="acceleratorVariantOptionDataConverter" parent="abstractPopulatingConverter">
+		<lookup-method name="createTarget" bean="variantOptionData"/>
+		<property name="populators">
+			<list>
+				<ref bean="acceleratorVariantOptionDataPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="defaultAcceleratorVariantOptionDataPopulator" alias="acceleratorVariantOptionDataPopulator"/>
+	<bean id="defaultAcceleratorVariantOptionDataPopulator"  class="com.solvia.facades.populators.AcceleratorVariantOptionDataPopulator"
+	      parent="variantOptionDataPopulator" >
+		<property name="mediaService" ref="mediaService"/>
+		<property name="mediaContainerService" ref="mediaContainerService"/>
+		<property name="typeService" ref="typeService"/>
+		<property name="imageFormatMapping" ref="imageFormatMapping"/>
+		<property name="variantAttributeMapping">
+			<map>
+				<entry key="ApparelStyleVariantProduct.style" value="styleSwatch"/>
+			</map>
+		</property>
+	</bean>
+
+
+	<alias name="acceleratorGenderConverter" alias="genderConverter"/> 
+	<bean id="acceleratorGenderConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="com.solvia.facades.product.data.GenderData"/>
+			<property name="populators">
+				<list>
+					<ref bean="genderDataPopulator"/>
+				</list>
+			</property>
+	</bean>
+
+	<alias name="defaultGenderDataPopulator" alias="genderDataPopulator"/>
+	<bean id="defaultGenderDataPopulator" class="com.solvia.facades.populators.GenderDataPopulator" >
+		<property name="typeService" ref="typeService"/>
+	</bean>
+
+	<bean id="apparelProductPopulator" class="com.solvia.facades.populators.ApparelProductPopulator" >
+		<property name="genderConverter" ref="genderConverter"/>
+	</bean>
+
+	<!-- Add the apparelProductPopulator to the productConverter -->
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="productConverter"/>
+		<property name="add" ref="apparelProductPopulator"/>
+	</bean>
+
+	<!-- accelerator Image Format Mappings -->
+	<alias name="acceleratorImageFormatMapping" alias="imageFormatMapping"/>
+	<bean id="acceleratorImageFormatMapping" parent="defaultImageFormatMapping">
+		<property name="mapping">
+			<map>
+				<entry key="superZoom" value="1200Wx1200H"/>
+				<entry key="zoom" value="515Wx515H"/>
+				<entry key="store" value="365Wx246H"/>
+				<entry key="product" value="300Wx300H"/>
+				<entry key="thumbnail" value="96Wx96H"/>
+				<entry key="cartIcon" value="65Wx65H"/>
+				<entry key="styleSwatch" value="30Wx30H"/>
+			</map>
+		</property>
+	</bean>
+
+	<alias name="acceleratorProductPrimaryImagePopulator" alias="productPrimaryImagePopulator" />
+	<bean id="acceleratorProductPrimaryImagePopulator" parent="defaultProductPrimaryImagePopulator">
+		<property name="imageFormats">
+			<list>
+				<value>zoom</value>
+				<value>product</value>
+				<value>thumbnail</value>
+				<value>cartIcon</value>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="acceleratorProductGalleryImagesPopulator" alias="productGalleryImagesPopulator" />
+	<bean id="acceleratorProductGalleryImagesPopulator" parent="defaultProductGalleryImagesPopulator">
+		<property name="imageFormats">
+			<list>
+				<value>superZoom</value>
+				<value>zoom</value>
+				<value>product</value>
+				<value>thumbnail</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="customerEmailContext" class="com.solvia.facades.process.email.context.CustomerEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="customerConverter" ref="customerConverter"/>
+	</bean>
+
+	<bean id="forgottenPasswordEmailContext" class="com.solvia.facades.process.email.context.ForgottenPasswordEmailContext" parent="customerEmailContext" scope="prototype" >
+		<property name="customerConverter" ref="customerConverter"/>
+	</bean>
+
+	<bean id="orderNotificationEmailContext" class="com.solvia.facades.process.email.context.OrderNotificationEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="orderConverter" ref="orderConverter"/>
+	</bean>
+
+	<bean id="quoteNotificationEmailContext" class="com.solvia.facades.process.email.context.QuoteNotificationEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="quoteService" ref="quoteService"/>
+		<property name="quoteConverter" ref="quoteConverter"/>
+	</bean>
+	
+	<bean id="deliverySentEmailContext" class="com.solvia.facades.process.email.context.DeliverySentEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="consignmentConverter" ref="consignmentConverter"/>
+	</bean>
+	
+	<bean id="readyForPickupEmailContext" class="com.solvia.facades.process.email.context.ReadyForPickupEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="consignmentConverter" ref="consignmentConverter"/>
+	</bean>
+	
+	<bean id="orderCancelledEmailContext" class="com.solvia.facades.process.email.context.OrderCancelledEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="orderConverter" ref="orderConverter"/>
+	</bean>
+	
+	<bean id="orderRefundEmailContext" class="com.solvia.facades.process.email.context.OrderRefundEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="orderConverter" ref="orderConverter"/>
+	</bean>
+	<bean id="consignmentCollectionReminderEmailContext" class="com.solvia.facades.process.email.context.ConsignmentCollectionReminderEmailContext" parent="abstractEmailContext" scope="prototype">
+        <property name="consignmentConverter" ref="consignmentConverter"/>
+        <property name="formatFactory" ref="formatFactory"/>
+        <property name="customerServiceUncollectedConsignmentStrategy" ref="customerServiceUncollectedConsignmentStrategy" />
+        <property name="orderConverter" ref="orderConverter"/>
+    </bean>
+
+	<bean id="orderPartiallyModifiedEmailContext" class="com.solvia.facades.process.email.context.OrderPartiallyModifiedEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="orderConverter" ref="orderConverter"/>
+		<property name="orderEntryConverter" ref="orderEntryConverter"/>
+		<property name="priceDataFactory" ref="priceDataFactory"/>		
+	</bean>
+
+	<bean id="orderPartiallyCanceledEmailContext" class="com.solvia.facades.process.email.context.OrderPartiallyCanceledEmailContext" parent="orderPartiallyModifiedEmailContext" scope="prototype" >
+	</bean>
+
+	<bean id="orderPartiallyRefundedEmailContext" class="com.solvia.facades.process.email.context.OrderPartiallyRefundedEmailContext" parent="orderPartiallyModifiedEmailContext" scope="prototype" >
+	</bean>
+
+	<bean id="notPickedUpConsignmentCanceledEmailContext" class="com.solvia.facades.process.email.context.NotPickedUpConsignmentCanceledEmailContext" parent="abstractEmailContext" scope="prototype" >
+		<property name="consignmentConverter" ref="consignmentConverter"/>
+		<property name="priceDataFactory" ref="priceDataFactory"/>
+	</bean>
+
+	<alias name="yacceleratorSearchPagePointOfServiceDistancePopulator" alias="searchPagePointOfServiceDistancePopulator" />
+	<bean id="yacceleratorSearchPagePointOfServiceDistancePopulator" class="com.solvia.facades.storefinder.populators.SearchPagePointOfServiceDistancePopulator" >
+		<property name="pointOfServiceDistanceConverter" ref="pointOfServiceDistanceConverter"/>
+	</bean>
+
+	<bean id="genderData" class="com.solvia.facades.product.data.GenderData" scope="prototype"/>
+
+	<alias name="slvDefaultCustomerPopulator" alias="slvCustomerPopulator"/>
+	<bean id="slvDefaultCustomerPopulator" class="com.solvia.facades.populators.customer.SlvCustomerPopulator" />
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="customerConverter" />
+		<property name="add" ref="slvCustomerPopulator" />
+	</bean>
+
+	<!-- Custom Customer Reverse Converter/Populator -->
+	<alias name="slvDefaultCustomerReverseConverter" alias="slvCustomerReverseConverter"/>
+	<bean id="slvDefaultCustomerReverseConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.core.model.user.CustomerModel"/>
+		<property name="populators">
+			<list>
+				<ref bean="slvCustomerReversePopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<alias name="slvDefaultCustomerReversePopulator" alias="slvCustomerReversePopulator"/>
+	<bean id="slvDefaultCustomerReversePopulator"
+		  class="com.solvia.facades.populators.customer.SlvCustomerReversePopulator"
+		  parent="customerReversePopulator"/>
+
+	<alias name="slvDefaultCustomerFacade" alias="slvCustomerFacade"/>
+	<bean id="slvDefaultCustomerFacade"
+		  class="com.solvia.facades.customer.impl.SlvCustomerFacadeImpl"
+		  parent="defaultCustomerFacade">
+		<property name="slvCustomerReversePopulator" ref="slvCustomerReversePopulator"/>
+		<property name="slvCustomerConverter" ref="customerconverter"/>
+		<property name="customerServices" ref="solviaCustomerServices"/>
+	</bean>
+
+	<alias name="customerconverter" alias="customerconverter"/>
+	<bean id="customerconverter" parent="abstractPopulatingConverter">
+	    <property name="targetClass" value="de.hybris.platform.commercefacades.user.data.CustomerData"/>
+	    <property name="populators">
+	        <list>
+	            <ref bean="slvCustomerPopulator"/>
+	        </list>
+	    </property>
+
+	</bean>
+
+<!--
+<alias name="customerServices" alias="customerServices"/>
+<bean id="customerServices">
+    <property name="targetClas" value="com.solvia.core.services.SolviaCustomerServices"/>
+    <property name="populators">
+        <list>
+            <ref bean="slvCustomerPopulator"/>
+        </list>
+    </property>
+
+</bean>
+-->
+
+
+	<bean id="solviaProductFacade" class="de.hybris.platform.commercefacades.product.impl.DefaultProductFacade"
+	>
+		<property name="productService" ref="productService"/>
+		<property name="customerReviewService" ref="customerReviewService"/>
+		<property name="userService" ref="userService"/>
+		<property name="modelService" ref="modelService"/>
+		<property name="commonI18NService" ref="commonI18NService"/>
+
+		<property name="customerReviewConverter" ref="customerReviewConverter"/>
+		<property name="productConverter" ref="slvProductConverter"/>
+		<property name="productConfiguredPopulator" ref="productConfiguredPopulator"/>
+
+		<property name="commerceProductReferenceService" ref="commerceProductReferenceService"/>
+		<property name="referenceDataProductReferenceConverter" ref="referenceDataProductReferenceConverter"/>
+		<property name="referenceProductConfiguredPopulator" ref="productConfiguredPopulator"/>
+		<property name="productConfigurationConverter" ref="orderEntryProductInfoConverter"/>
+		<property name="configurationHandlerFactory" ref="productConfigurationHandlerFactory"/>
+		<property name="configuratorSettingsService" ref="configuratorSettingsService"/>
+	</bean>
+
+	<alias name="slvDefaultProductPopulator" alias="slvProductPopulator"/>
+	<bean id="slvDefaultProductPopulator"
+		  class="com.solvia.facades.populators.product.SlvProductPopulator">
+
+	<property name="productModelUrlResolver" ref="productModelUrlResolver"/>
+	<property name="productBasicPopulator" ref="productBasicPopulator"/>
+	<property name="variantSelectedPopulator" ref="variantSelectedPopulator"/>
+	<property name="productPrimaryImagePopulator" ref="productPrimaryImagePopulator"/>
+
+	</bean>
+
+
+	<alias name="slvDefaultProductConverter" alias="slvProductConverter"/>
+	<bean id="slvDefaultProductConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.commercefacades.product.data.ProductData"/>
+		<property name="populators">
+			<list>
+				<ref bean="slvProductPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+
+
+
+
+
+
+
+
+
+
+	<alias name="solviaProductConverter" alias="solviaProductConverter"/>
+	<bean id="solviaProductConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.commercefacades.solviaProducts.data.SolviaProductData"/>
+		<property name="populators">
+			<list>
+				<ref bean="slvCustomProductPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="slvCustomProductPopulator" class="com.solvia.facades.populators.product.SlvProductDtlsPopulator"/>
+
+
+	<alias name="slvDefaultProductFacade" alias="slvProductFacade"/>
+	<bean id="slvDefaultProductFacade"
+		  class="com.solvia.facades.product.SlvProductFacadeImpl">
+		<property name="slvProductServices" ref="slvProductServices"/>
+		<property name="solviaProductConverter" ref="solviaProductConverter"/>
+	</bean>
+
+
+	<alias name="solviaCategoryConverter" alias="solviaCategoryConverter"/>
+	<bean id="solviaCategoryConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="de.hybris.platform.commercefacades.solviaCategories.data.SolviaCategoryData"/>
+		<property name="populators">
+			<list>
+				<ref bean="slvCustomCategoryPopulator"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="slvCustomCategoryPopulator" class="com.solvia.facades.populators.category.SlvCategoryPopulator"/>
+
+
+	<alias name="slvDefaultCategoryFacade" alias="slvCategoryFacade"/>
+	<bean id="slvDefaultCategoryFacade"
+		  class="com.solvia.facades.category.SlvCategoryFacadeImpl">
+		<property name="slvCategoryServices" ref="SlvCategoryServices"/>
+		<property name="solviaCategoryConverter" ref="solviaCategoryConverter"/>
+	</bean>
+
+
+
+</beans>

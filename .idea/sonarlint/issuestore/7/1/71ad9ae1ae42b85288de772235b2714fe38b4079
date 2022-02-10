@@ -1,0 +1,65 @@
+
+Q
+java:S1874M";Remove this use of "B2BSaleQuoteService"; it is deprecated.(’ÚÞŠ
+P
+java:S1133X"5Do not forget to remove this deprecated code someday.(¨ü€”üÿÿÿÿ
+b
+java:S5738u"GRemove this call to a deprecated class, it has been marked for removal.(ˆÁá»øÿÿÿÿ
+b
+java:S5738u"GRemove this call to a deprecated class, it has been marked for removal.(ˆÁá»øÿÿÿÿ
+]
+java:S5738x"GRemove this call to a deprecated class, it has been marked for removal.(ëØÕ÷
+c
+java:S5738š"GRemove this call to a deprecated class, it has been marked for removal.(ª…ÃÕúÿÿÿÿ
+c
+java:S5738›"GRemove this call to a deprecated class, it has been marked for removal.(Ù½¨ßþÿÿÿÿ
+^
+java:S5738"GRemove this call to a deprecated class, it has been marked for removal.(›Õ­Ò
+c
+java:S5738­"GRemove this call to a deprecated class, it has been marked for removal.(¶†òÄøÿÿÿÿ
+c
+java:S5738®"GRemove this call to a deprecated class, it has been marked for removal.(Ù½¨ßþÿÿÿÿ
+c
+java:S5738±"GRemove this call to a deprecated class, it has been marked for removal.(ªá–ýÿÿÿÿ
+Q
+java:S1133ø"5Do not forget to remove this deprecated code someday.(ñÍŒÂúÿÿÿÿ
+L
+java:S1133†"5Do not forget to remove this deprecated code someday.(çÊš”
+L
+java:S1133™"5Do not forget to remove this deprecated code someday.(››êÆ
+i
+java:S3776¤"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(À®ƒ¹
+I
+java:S1135à"2Complete the task associated to this TODO comment.(èýç™
+F
+java:S1874ô"0Remove this use of "Required"; it is deprecated.(çüÙQ
+F
+java:S1874ÿ"0Remove this use of "Required"; it is deprecated.(çüÙQ
+F
+java:S1874Š"0Remove this use of "Required"; it is deprecated.(çüÙQ
+F
+java:S1874•"0Remove this use of "Required"; it is deprecated.(çüÙQ
+F
+java:S1874¡"0Remove this use of "Required"; it is deprecated.(çüÙQ
+F
+java:S1874¬"0Remove this use of "Required"; it is deprecated.(çüÙQ
+F
+java:S1874·"0Remove this use of "Required"; it is deprecated.(çüÙQ
+F
+java:S1874Ã"0Remove this use of "Required"; it is deprecated.(çüÙQ
+W
+java:S1874É";Remove this use of "B2BSaleQuoteService"; it is deprecated.(Ñä™£øÿÿÿÿ
+F
+java:S1874Î"0Remove this use of "Required"; it is deprecated.(çüÙQ
+W
+java:S1874Ï";Remove this use of "B2BSaleQuoteService"; it is deprecated.(ÑÖÝ‡ýÿÿÿÿ
+F
+java:S1874Ù"0Remove this use of "Required"; it is deprecated.(çüÙQ
+F
+java:S1874ä"0Remove this use of "Required"; it is deprecated.(çüÙQ
+F
+java:S1874ï"0Remove this use of "Required"; it is deprecated.(çüÙQ
+F
+java:S1874ú"0Remove this use of "Required"; it is deprecated.(çüÙQ
+Z
+java:S1596ð">Replace "Collections.EMPTY_LIST" by "Collections.emptyList()".(Ô‹Ùàþÿÿÿÿ

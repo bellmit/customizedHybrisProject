@@ -1,0 +1,70 @@
+package de.hybris.platform.promotionengineservices.test
+
+
+import de.hybris.platform.droolsruleengineservices.compiler.impl.DefaultDroolsRuleActionContext;
+import de.hybris.platform.ruleengineservices.rule.evaluation.impl.RuleAndRuleGroupExecutionTracker;
+import de.hybris.platform.ruleengineservices.rao.RuleEngineResultRAO;
+import de.hybris.platform.ruleengineservices.rao.CartRAO;
+import de.hybris.platform.ruleengineservices.rrd.RuleGroupExecutionRRD;
+import de.hybris.platform.ruleengineservices.rao.WebsiteGroupRAO;
+import de.hybris.platform.ruleengineservices.rrd.RuleConfigurationRRD;
+import de.hybris.platform.ruleengineservices.rao.ProductConsumedRAO;
+import java.util.Map;
+import de.hybris.platform.ruleengineservices.rao.OrderEntryRAO;
+import java.math.BigDecimal;
+
+global de.hybris.platform.ruleengineservices.rule.evaluation.RuleExecutableAction ruleOrderEntryPercentageDiscountAction;
+
+query rule_7b11527912454953a03b47c205b1db39_query(CartRAO $v1, RuleEngineResultRAO $v2, WebsiteGroupRAO $v3, OrderEntryRAO $v4, ProductConsumedRAO $v5)
+   (
+      (
+         $v4 := OrderEntryRAO(basePrice >= new BigDecimal("95"))
+         and
+         $v1 := CartRAO(currencyIsoCode == "USD", entries contains $v4)
+         and
+         $v5 := ProductConsumedRAO(orderEntry == $v4, availableQuantity >= new Integer(1))
+      )
+   )
+end
+
+rule "basePriceWithDiscountRow_rrd"
+@ruleCode("basePriceWithDiscountRow_rrd")
+@moduleName("promotions-module-junit")
+dialect "mvel" 
+salience 50
+when
+  (
+     
+         $rao_v4 := OrderEntryRAO(basePrice >= new BigDecimal("95"))
+         and
+         exists (CartRAO(currencyIsoCode == "USD", entries contains $rao_v4))
+         and
+         exists (ProductConsumedRAO(orderEntry == $rao_v4, availableQuantity >= new Integer(1)))
+    
+   )
+   $v1 := CartRAO()
+   $v2 := RuleEngineResultRAO()
+   accumulate (
+      rule_7b11527912454953a03b47c205b1db39_query($v1, $v2, $v3, $v4, $v5;)
+   ;
+      $v1_set : collectSet($v1),
+      $v2_set : collectSet($v2),
+      $v3_set : collectSet($v3),
+      $v4_set : collectSet($v4),
+      $v5_set : collectSet($v5),
+      $result_count : count(1)
+   )
+   $config := RuleConfigurationRRD(ruleCode == "basePriceWithDiscountRow_rrd")
+   $groupExecution := RuleGroupExecutionRRD(code == $config.ruleGroupCode)
+   eval($result_count > 0 && $groupExecution.allowedToExecute($config))
+then
+   Map variables = [
+      "de.hybris.platform.ruleengineservices.rao.CartRAO" : $v1_set,
+      "de.hybris.platform.ruleengineservices.rao.RuleEngineResultRAO" : $v2_set,
+      "de.hybris.platform.ruleengineservices.rao.WebsiteGroupRAO" : $v3_set,
+      "de.hybris.platform.ruleengineservices.rao.OrderEntryRAO" : $v4_set,
+      "de.hybris.platform.ruleengineservices.rao.ProductConsumedRAO" : $v5_set
+   ];
+   ruleOrderEntryPercentageDiscountAction.executeAction(new DefaultDroolsRuleActionContext(variables, kcontext), ["value_uuid":"e14c8b85-f80e-483d-af74-28833953d259", "value":new BigDecimal("10")]);
+   $groupExecution.trackRuleGroupExecution($config);
+end

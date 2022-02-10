@@ -1,0 +1,16 @@
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <alias name="defaultPermissionEnablerService" alias="cmsPermissionEnablerService" />
+    <bean id="defaultPermissionEnablerService" class="de.hybris.platform.cms2.permissions.impl.DefaultPermissionEnablerService">
+        <property name="permissionConfigs" ref="cmsPermissionCheckerConfiguration" />
+        <property name="typeService" ref="typeService" />
+        <property name="checkingAllAttributes" value="true" />
+        <property name="checkingAllTypes" value="true" />
+    </bean>
+
+</beans>

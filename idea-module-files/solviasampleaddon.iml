@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module descriptorType="CUSTOM" importedAsReadOnly="false" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration process_explicitly_annotated="false">
+        <fileset id="solviasampleaddonspring" name="solviasampleaddonspring" removed="false">
+          <dependency>addonsupportspring==addonsupport</dependency>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/eclipsebin" />
+    <exclude-output />
+    <javadoc-paths>
+      <root url="https://download.hybris.com/api/1905/commercesuite" />
+    </javadoc-paths>
+    <content url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon">
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/acceleratoraddon/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/acceleratoraddon/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/acceleratoraddon/web/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/acceleratoraddon/web/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/acceleratoraddon/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/acceleratoraddon/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/backoffice/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/backoffice/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/backoffice/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/backoffice/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/backoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/backoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/commonweb/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/commonweb/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/commonweb/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/commonweb/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/commonweb/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/commonweb/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/web/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/web/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/web/testsrc" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/eclipsebin" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/bower_components" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/jsTarget" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/web/webroot/WEB-INF/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/commonweb/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/commonweb/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/commonweb/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/acceleratoraddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/acceleratoraddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/acceleratoraddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/backoffice/classes" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../custom/solvia/solviasampleaddon/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="addonsupport" exported="" />
+  </component>
+</module>

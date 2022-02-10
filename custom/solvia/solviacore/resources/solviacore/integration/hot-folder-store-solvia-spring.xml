@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:int="http://www.springframework.org/schema/integration"
+	   xmlns:file="http://www.springframework.org/schema/integration/file"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xsi:schemaLocation="http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/file http://www.springframework.org/schema/integration/file/spring-integration-file.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config/>
+
+	<bean id="baseDirectorySolvia" class="java.lang.String">
+		<constructor-arg value="#{baseDirectory}/${tenantId}/electronics/solvia" />
+	</bean>
+	<file:inbound-channel-adapter id="batchFilesCategorySolvia"
+								  directory="#{baseDirectorySolvia}" filename-regex="^(customer)-([0-9]+)\.csv"
+	>
+		<int:poller fixed-rate="1000" />
+	</file:inbound-channel-adapter>
+
+	<file:inbound-channel-adapter id="batchFilesCategorySolviaProduct"
+								  directory="#{baseDirectorySolvia}" filename-regex="^(product)-([0-9]+)\.csv"
+	>
+		<int:poller fixed-rate="1000" />
+	</file:inbound-channel-adapter>
+
+	<file:inbound-channel-adapter id="batchFilesCategorySolviaCategory"
+								  directory="#{baseDirectorySolvia}" filename-regex="^(category)-([0-9]+)\.csv"
+	>
+		<int:poller fixed-rate="1000" />
+	</file:inbound-channel-adapter>
+
+	<file:outbound-gateway request-channel="batchFilesCategorySolvia" reply-channel="batchFilesSolviaProc"
+						   directory="#{baseDirectorySolvia}/processing" delete-source-files="true" />
+
+	<file:outbound-gateway request-channel="batchFilesCategorySolviaProduct" reply-channel="batchFilesSolviaProductProc"
+						   directory="#{baseDirectorySolvia}/processing" delete-source-files="true" />
+
+	<file:outbound-gateway request-channel="batchFilesCategorySolviaCategory" reply-channel="batchFilesSolviaCategoryProc"
+						   directory="#{baseDirectorySolvia}/processing" delete-source-files="true" />
+
+	<int:service-activator input-channel="batchFilesSolviaCategoryProc" output-channel="batchFilesHeaderInit"
+						   ref="solviaCategoryHeaderSetupTask" method="execute" />
+
+	<bean id="solviaCategoryHeaderSetupTask" class="de.hybris.platform.acceleratorservices.dataimport.batch.task.HeaderSetupTask">
+		<property name="catalog" value="solviaCategoryCatalog" />
+		<property name="net" value="false" />
+		<property name="storeBaseDirectory" ref="baseDirectorySolvia" />
+	</bean>
+
+	<int:service-activator input-channel="batchFilesSolviaProc" output-channel="batchFilesHeaderInit"
+						   ref="solviaHeaderSetupTask" method="execute" />
+
+	<bean id="solviaHeaderSetupTask" class="de.hybris.platform.acceleratorservices.dataimport.batch.task.HeaderSetupTask">
+		<property name="catalog" value="solviaProductCatalog" />
+		<property name="net" value="false" />
+		<property name="storeBaseDirectory" ref="baseDirectorySolvia" />
+	</bean>
+
+	<int:service-activator input-channel="batchFilesSolviaProductProc" output-channel="batchFilesHeaderInit"
+						   ref="solviaProductHeaderSetupTask" method="execute" />
+
+	<bean id="solviaProductHeaderSetupTask" class="de.hybris.platform.acceleratorservices.dataimport.batch.task.HeaderSetupTask">
+		<property name="catalog" value="solviaProductCatalog" />
+		<property name="net" value="false" />
+		<property name="storeBaseDirectory" ref="baseDirectorySolvia" />
+	</bean>
+
+
+
+
+	<bean id="slvCustomerConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="customer"
+		  p:converter-ref="slvCustomerConverter"/>
+
+	<bean id="slvCustomerConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				# Insert or Update Customer
+				INSERT_UPDATE Customer;uid[unique=true];name;title(code);slvCustomField;slvCustomFieldInteger
+			</value>
+		</property>
+		<property name="type" value="Customer"/>
+		<property name="impexRow">
+			<value>;{+0};{1};{2};{3};{4}</value>
+		</property>
+	</bean>
+
+
+	<!--
+	<bean id="slvProductConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="base_product"
+		  p:converter-ref="slvProductConverter"/>
+-->
+
+	<bean id="slvProductConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				# Insert or UPDATE PRODUCT
+				INSERT_UPDATE Product;code[unique=true];name;slvProductCustomField;slvProductCustomFieldInteger;catalogVersion
+			</value>
+		</property>
+		<property name="type" value="Product"/>
+		<property name="impexRow">
+			<value>;{+0};{+1}:{2};{3};{4}</value>
+		</property>
+	</bean>
+
+
+	<bean id="slvCategoryConverterMapping"
+		  class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.mapping.impl.DefaultConverterMapping"
+		  p:mapping="category"
+		  p:converter-ref="slvCategoryConverter"/>
+
+	<bean id="slvCategoryConverter" class="de.hybris.platform.acceleratorservices.dataimport.batch.converter.impl.DefaultImpexConverter">
+		<property name="header">
+			<value>#{defaultImpexProductHeader}
+				# Insert or Update Customer
+				INSERT_UPDATE Category; catalog(id)[allownull = true]; catalogVersion(catalog(id), version)[unique = true, allownull = true]; code[unique = true, allownull = true]; name[lang = en]; name[lang = de];slvCategoryCustomField;slvCategoryCustomFieldInteger
+			</value>
+		</property>
+		<property name="type" value="Category"/>
+		<property name="impexRow">
+			<value>;{+0};{1};{2};{3};{4};{5};{6}</value>
+		</property>
+	</bean>
+
+
+
+
+</beans>
