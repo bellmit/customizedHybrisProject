@@ -3,7 +3,7 @@ My Customized Hybris Project for Exercises.
 
 
 
-Please Check "Custom" file for my customized classes and beans.
+Please Check "Custom" file for my customized classes and xmls.
 
 WHAT YOU WILL SEE MY CUSTOM PROJECT DIFFERENT THAN HYBRIS (CX) OUT OF BOX:
 
