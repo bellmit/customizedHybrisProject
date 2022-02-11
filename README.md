@@ -1,5 +1,5 @@
 # customizedHybrisProject
-My Customized Hybris Project for Exercises.
+My Customized Hybris Project for Exercise.
 
 
 
